@@ -73,12 +73,8 @@ WSGI_APPLICATION = 'restaurant_management.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME', default='fbcatering'),
-        'USER': config('DB_USER', default='nikodemo'),
-        'PASSWORD': config('DB_PASSWORD', default='Rombo@2024'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='5432'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
