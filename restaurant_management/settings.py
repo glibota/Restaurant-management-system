@@ -18,11 +18,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 LOGOUT_REDIRECT_URL = '/login/'
 
 # Secret Key
-SECRET_KEY = config('DJANGO_SECRET_KEY', default='0ow#)3$-6s=s1%yps)x1*$&=n-$8+)jbi(*c@uyj7)a*c0+vef')
+SECRET_KEY = config('DJANGO_SECRET_KEY',
+                    default='0ow#)3$-6s=s1%yps)x1*$&=n-$8+)jbi(*c@uyj7)a*c0+vef')
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['ec2-13-60-44-3.eu-north-1.compute.amazonaws.com','fbateringm.com',"13.60.44.3","www.fbcatering.com","www.fbatering.com"]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost',
+                 'http://127.0.0.1:8080', '192.168.1.102',]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -72,11 +74,11 @@ WSGI_APPLICATION = 'restaurant_management.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'fbcatering'),
-        'USER': os.environ.get('DB_USER', 'nikodemo'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'Rombo@2024'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
+        'NAME': config('DB_NAME', default='fbcatering'),
+        'USER': config('DB_USER', default='nikodemo'),
+        'PASSWORD': config('DB_PASSWORD', default='Rombo@2024'),
+        'HOST': config('DB_HOST', default='localhost'),
+        'PORT': config('DB_PORT', default='5432'),
     }
 }
 
@@ -100,11 +102,12 @@ TIME_ZONE = 'Africa/Dar_es_salaam'
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = '/static/'
+STATIC_URL = '/staticfiles/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'users', 'static'),
+    os.path.join(BASE_DIR, 'users', 'staticfiles',
+                 'Restaurant-management-system/users/staticfiles'),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles',)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -115,7 +118,7 @@ CART_SESSION_ID = 'cart'
 
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 
 LOGGING = {
     'version': 1,
