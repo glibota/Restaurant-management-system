@@ -1,71 +1,68 @@
-{% extends 'orders/base.html' %}
+{% extends 'orders/base.html' %} {% load static %} {% block title %}Confirm Your
+Order{% endblock %} {% block content %}
+<h1>Confirm Your Order</h1>
 
-{% load static %}
+<h2>Your Cart</h2>
+{% if cart %}
+<div class="table-container">
+  <table class="cart">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Menu Item</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in cart %}
+      <tr>
+        <td>
+          <a href="{{ item.menu_item.get_absolute_url }}">
+            <img
+              src="{% if item.menu_item.image %}{{ item.menu_item.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}"
+              alt="{{ item.menu_item.name }}"
+            />
+          </a>
+        </td>
+        <td>{{ item.menu_item.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>${{ item.price }}</td>
+        <td>${{ item.total_price }}</td>
+      </tr>
+      {% endfor %}
+      <tr class="total">
+        <td>Total</td>
+        <td colspan="3"></td>
+        <td>${{ cart.get_total_price }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-{% block title %}Confirm Your Order{% endblock %}
+<p>
+  Asante kwa oda yako! Bofya kitufe hapa chini ili kukamilisha ununuzi wako.
+</p>
 
-{% block content %}
-    <h1>Confirm Your Order</h1>
-
-    <h2>Your Cart</h2>
-    {% if cart %}
-        <div class="table-container">
-            <table class="cart">
-                <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Menu Item</th>
-                        <th>Quantity</th>
-                        <th>Unit Price</th>
-                        <th>Total Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for item in cart %}
-                        <tr>
-                            <td>
-                                <a href="{{ item.menu_item.get_absolute_url }}">
-                                    <img src="{% if item.menu_item.image %}{{ item.menu_item.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ item.menu_item.name }}">
-                                </a>
-                            </td>
-                            <td>{{ item.menu_item.name }}</td>
-                            <td>{{ item.quantity }}</td>
-                            <td>${{ item.price }}</td>
-                            <td>${{ item.total_price }}</td>
-                        </tr>
-                    {% endfor %}
-                    <tr class="total">
-                        <td>Total</td>
-                        <td colspan="3"></td>
-                        <td>${{ cart.get_total_price }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <p>Asante kwa oda yako! Bofya kitufe hapa chini ili kukamilisha ununuzi wako.</p>
-        
-        {% if is_manager %}
-            <form action="{% url 'oda:order_create' %}" method="post" class="order-form">
-                {% csrf_token %}
-                <label for="waiter">Weka Mhudumu:</label>
-                <select name="waiter" id="waiter">
-                    <option value="">Chagua Mhudumu</option>
-                    {% for waiter in waiters %}
-                        <option value="{{ waiter.id }}">{{ waiter.name }}</option>
-                    {% endfor %}
-                </select>
-                <input type="submit" value="Weka Oda" class="button">
-            </form>
-        {% else %}
-            <form action="{% url 'oda:order_create' %}" method="post">
-                {% csrf_token %}
-                <input type="submit" value="weka oda" class="button">
-            </form>
-        {% endif %}
-        
-    {% else %}
-        <p>Kikapu chako hakina kitu.</p>
-        <a href="{% url 'orders:menu_item_list' %}" class="button">Endelea Kuchagua</a>
-    {% endif %}
-{% endblock %}
+{% if is_manager %}
+<form action="{% url 'oda:order_create' %}" method="post" class="order-form">
+  {% csrf_token %}
+  <label for="waiter">Weka Mhudumu:</label>
+  <select name="waiter" id="waiter">
+    <option value="">Chagua Mhudumu</option>
+    {% for waiter in waiters %}
+    <option value="{{ waiter.id }}">{{ waiter.name }}</option>
+    {% endfor %}
+  </select>
+  <input type="submit" value="Weka Oda" class="button" />
+</form>
+{% else %}
+<form action="{% url 'oda:order_create' %}" method="post">
+  {% csrf_token %}
+  <input type="submit" value="weka oda" class="button" />
+</form>
+{% endif %} {% else %}
+<p>Kikapu chako hakina kitu.</p>
+<a href="{% url 'orders:menu_item_list' %}" class="button">Endelea Kuchagua</a>
+{% endif %} {% endblock %}
