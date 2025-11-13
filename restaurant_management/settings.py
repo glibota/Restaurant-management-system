@@ -21,10 +21,9 @@ LOGOUT_REDIRECT_URL = '/login/'
 SECRET_KEY = config('DJANGO_SECRET_KEY',
                     default='0ow#)3$-6s=s1%yps)x1*$&=n-$8+)jbi(*c@uyj7)a*c0+vef')
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost',
-                 'http://127.0.0.1:8080', '192.168.1.102', '192.168.118.138']
+ALLOWED_HOSTS = ['issubi.pythonanywhere.com', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
