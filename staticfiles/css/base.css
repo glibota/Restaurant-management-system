@@ -101,7 +101,7 @@ td input[type="submit"] {
 }
 
 table {
-    min-width: 600px; /* Ensure minimum width to accommodate content */
+    min-width: 300px; /* Ensure minimum width to accommodate content */
 }
 
 /* Forms */
@@ -559,7 +559,7 @@ form div.field {
 }
 
 #back-to-top.visible {
-    opacity: 1;
+    opacity: 10;
     visibility: visible;
 }
 

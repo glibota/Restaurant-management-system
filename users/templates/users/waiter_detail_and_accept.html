@@ -22,7 +22,6 @@
     {% endif %}
 
     <!-- View History Button -->
-    <!-- View History Button -->
     <div style="margin-bottom: 2rem;">
         <a href="{% url 'orders:waiter_history_with_id' waiter_id=waiter.id %}" 
         style="background-color: #228B22; 
@@ -95,7 +94,7 @@
                                 <td>
                                     <input type="text" name="sender_name_{{ order.id }}" id="sender_name_{{ order.id }}" 
                                         {% if order.payment_method != 'phone' %}style="display:none;"{% endif %} 
-                                        value="{{ order.sender_name }}" placeholder="Enter sender name" class="form-control">
+                                        value="{{ order.sender_name }}" placeholder="Ingiza jina la mtumaji" class="form-control">
                                 </td>
 
                                 <!-- Update Payment Method Button -->

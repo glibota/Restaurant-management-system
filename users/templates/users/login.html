@@ -2,45 +2,51 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">  <!-- Link to the specific CSS file -->
-</head>
-<body>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+    <!-- Link to the specific CSS file -->
+  </head>
+  <body>
     <div class="login-container">
-        <h2>Login</h2>
+      <h2>Login</h2>
 
-        <form method="post" action="{% url 'users:login' %}">
-            {% csrf_token %}
-            <div>
-                {{ form.non_field_errors }} <!-- Display non-field-specific errors here -->
-                {{ form.as_p }}
-            </div>
-            <div class="show-password-container">
-                <input type="checkbox" id="show-password" onclick="togglePassword()">
-                <label for="show-password">Show Password</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>
+      <form method="post" action="{% url 'users:login' %}">
+        {% csrf_token %}
+        <div>
+          {{ form.non_field_errors }}
+          <!-- Display non-field-specific errors here -->
+          {{ form.as_p }}
+        </div>
+        <div class="show-password-container">
+          <input
+            type="checkbox"
+            id="show-password"
+            onclick="togglePassword()"
+          />
+          <label for="show-password">Show Password</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
     </div>
 
     <!-- Footer section -->
-    <footer style="text-align: center; margin-top: 20px;">
-        <p>&copy; 2024 Powered by Issubi</p>
+    <footer style="text-align: center; margin-top: 20px">
+      <p>&copy; 2025 Powered by Issubi</p>
     </footer>
 
     <!-- JavaScript to toggle password visibility -->
     <script>
-        function togglePassword() {
-            var passwordField = document.querySelector('input[type="password"]');
-            if (passwordField.type === "password") {
-                passwordField.type = "text";
-            } else {
-                passwordField.type = "password";
-            }
+      function togglePassword() {
+        var passwordField = document.querySelector('input[type="password"]');
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+        } else {
+          passwordField.type = "password";
         }
+      }
     </script>
-</body>
+  </body>
 </html>

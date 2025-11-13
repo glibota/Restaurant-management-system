@@ -3,7 +3,8 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    position: relative; /* For positioning the generate report button */
+    position: relative;
+    /* For positioning the generate report button */
 }
 
 /* Center the Title */
@@ -18,24 +19,28 @@ h2 {
 /* Button Sizes */
 .btn-lg {
     padding: 12px 24px;
-    font-size: 1.2rem; /* Larger font size */
+    font-size: 1.2rem;
+    /* Larger font size */
     font-weight: 500;
 }
 
 .btn-sm {
     padding: 8px 16px;
-    font-size: 0.9rem; /* Smaller font size */
+    font-size: 0.9rem;
+    /* Smaller font size */
     font-weight: 400;
 }
 
 /* Center align table headers */
 .table th {
-    text-align: center; /* Center align text in table headers */
+    text-align: center;
+    /* Center align text in table headers */
 }
 
 /* Optional: Center align table data cells */
 .table td {
-    text-align: center; /* Center align text in table data cells */
+    text-align: center;
+    /* Center align text in table data cells */
 }
 
 
@@ -48,26 +53,38 @@ h2 {
 
 /* Ripoti Button Styling */
 .btn-ripoti {
-    background-color: #e0a904; /* Deep yellow color */
-    color: #ffffff; /* White text color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 12px 24px; /* Button padding */
-    font-size: 1.2rem; /* Larger font size */
-    font-weight: 500; /* Font weight */
-    text-transform: uppercase; /* Uppercase text */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+    background-color: #e0a904;
+    /* Deep yellow color */
+    color: #ffffff;
+    /* White text color */
+    border: none;
+    /* Remove border */
+    border-radius: 5px;
+    /* Rounded corners */
+    padding: 12px 24px;
+    /* Button padding */
+    font-size: 1.2rem;
+    /* Larger font size */
+    font-weight: 500;
+    /* Font weight */
+    text-transform: uppercase;
+    /* Uppercase text */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Transition effects */
 }
 
 .btn-ripoti:hover {
-    background-color: #FFB300; /* Darker shade on hover */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow effect on hover */
+    background-color: #78580e;
+    /* Darker shade on hover */
+    box-shadow: 0 4px 6px rgba(20, 19, 19, 0.1);
+    /* Box shadow effect on hover */
 }
 
 .btn-ripoti:focus,
 .btn-ripoti:active {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.5); /* Focus ring */
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.5);
+    /* Focus ring */
 }
 
 /* Card Section Styling */
@@ -75,15 +92,20 @@ h2 {
     border-radius: 10px;
     transition: all 0.3s ease;
     padding: 10px;
-    background: linear-gradient(
-        135deg,
-        #bbdefb 25%, /* Light Blue */
-        #bbdefb 50%, /* Light Blue */
-        #a5d6a7 50%, /* Light Green */
-        #a5d6a7 75%, /* Light Green */
-        #fff9c4 75%, /* Light Yellow */
-        #fff9c4 100% /* Light Yellow */
-    );
+    background: linear-gradient(135deg,
+            #bbdefb 25%,
+            /* Light Blue */
+            #bbdefb 50%,
+            /* Light Blue */
+            #a5d6a7 50%,
+            /* Light Green */
+            #a5d6a7 75%,
+            /* Light Green */
+            #fff9c4 75%,
+            /* Light Yellow */
+            #fff9c4 100%
+            /* Light Yellow */
+        );
     height: auto;
 }
 
@@ -94,7 +116,8 @@ h2 {
 .card-header {
     font-weight: bold;
     font-size: 18px;
-    background-color: #bbdefb; /* Light Blue background for the header */
+    background-color: #bbdefb;
+    /* Light Blue background for the header */
     border-bottom: 2px solid #343a40;
     padding: 8px 12px;
     color: #343a40;
@@ -102,7 +125,8 @@ h2 {
 
 .card-body {
     padding: 10px 12px;
-    background-color: #ffffff; /* White background for the card body */
+    background-color: #ffffff;
+    /* White background for the card body */
 }
 
 .card-body h5 {
@@ -113,8 +137,10 @@ h2 {
 }
 
 .btn-primary {
-    background-color: #228B22; /* Primary button color */
-    color: #ffffff; /* White text color */
+    background-color: #228B22;
+    /* Primary button color */
+    color: #ffffff;
+    /* White text color */
     border: none;
     border-radius: 5px;
     padding: 12px 15px;
@@ -125,13 +151,16 @@ h2 {
 }
 
 .btn-primary:hover {
-    background-color: #1e7e1e; /* Darker shade on hover */
+    background-color: #1e7e1e;
+    /* Darker shade on hover */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.btn-primary:focus, .btn-primary:active {
+.btn-primary:focus,
+.btn-primary:active {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.5); /* Focus ring */
+    box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.5);
+    /* Focus ring */
 }
 
 /* Table Hover Effect */
@@ -142,28 +171,35 @@ h2 {
 /* Arrange Cards in Grid with Six Cards Per Row */
 .row {
     display: flex;
-    flex-wrap: wrap; /* Allows cards to wrap to next line */
-    justify-content: space-between; /* Equal spacing between cards */
+    flex-wrap: wrap;
+    /* Allows cards to wrap to next line */
+    justify-content: space-between;
+    /* Equal spacing between cards */
 }
 
 /* Each Card Width */
 .row .col-md-4 {
-    flex: 0 0 16.66%; /* 6 cards per row (100/6 = 16.66%) */
-    max-width: 16.66%; /* 6 cards per row */
-    margin-bottom: 20px; /* Space below each card */
+    flex: 0 0 16.66%;
+    /* 6 cards per row (100/6 = 16.66%) */
+    max-width: 16.66%;
+    /* 6 cards per row */
+    margin-bottom: 20px;
+    /* Space below each card */
 }
 
 /* Responsive Design for Cards */
 @media (max-width: 991.98px) {
     .row .col-md-4 {
-        flex: 0 0 50%; /* 2 cards per row on medium screens */
+        flex: 0 0 50%;
+        /* 2 cards per row on medium screens */
         max-width: 50%;
     }
 }
 
 @media (max-width: 767.98px) {
     .row .col-md-4 {
-        flex: 0 0 100%; /* 1 card per row on small screens */
+        flex: 0 0 100%;
+        /* 1 card per row on small screens */
         max-width: 100%;
     }
 
@@ -187,35 +223,43 @@ h2 {
     border: 1px solid #ddd;
     background: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px;
+    /* Rounded corners */
 }
 
 /* Card Body Styling */
 .waiter-card .card-body {
-    padding: 15px; /* Increased padding */
+    padding: 15px;
+    /* Increased padding */
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Space between elements */
+    justify-content: space-between;
+    /* Space between elements */
 }
 
 /* Waiter Name Styling */
 .waiter-card .card-body .card-title {
-    font-size: 1.5rem; /* Adjust font size */
-    margin-bottom: 15px; /* Space below the name */
+    font-size: 1.5rem;
+    /* Adjust font size */
+    margin-bottom: 15px;
+    /* Space below the name */
 }
 
 /* View Details Button Styling */
 .waiter-card .card-body .btn-primary {
-    font-size: 0.9rem; /* Smaller font size for view button */
+    font-size: 0.9rem;
+    /* Smaller font size for view button */
     padding: 8px 16px;
-    margin-top: 15px; /* Space above the button */
+    margin-top: 15px;
+    /* Space above the button */
 }
 
 .custom-button-container {
-    margin-bottom: 2rem; /* Adjust as needed */
+    margin-bottom: 2rem;
+    /* Adjust as needed */
 }
 
-.center-text {
+.text-center {
     text-align: center;
 }
