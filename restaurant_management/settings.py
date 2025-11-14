@@ -21,7 +21,7 @@ LOGOUT_REDIRECT_URL = '/login/'
 SECRET_KEY = config('DJANGO_SECRET_KEY',
                     default='0ow#)3$-6s=s1%yps)x1*$&=n-$8+)jbi(*c@uyj7)a*c0+vef')
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['issubi.pythonanywhere.com', '127.0.0.1']
 
