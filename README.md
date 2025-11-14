@@ -38,15 +38,15 @@ Html,Css and javascript() used for frontend.
 
    a. Waiter
       Username: waiter
-      Password: Go12#34
+      Password: Go12#34567
 
    b. Cashier
       Username: cashier
-      Password: Go12#34
+      Password: Go12#34567
   
    c. CEO
       Username: ceo
-      Password: Go12#34
+      Password: Go12#34567
 
 9. Explore the system:
    Each role has its own permissions. Navigate and perform activities according to the account you logged in with.
