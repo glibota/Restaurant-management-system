@@ -2,193 +2,150 @@
 
 ## Overview
 
-The Restaurant Management System is a web-based application developed to streamline restaurant operations at **Rombo Green View Hotel (RGVH)**.
-
-The system supports essential workflows such as order management, payment processing, expense tracking, and administrative oversight. It uses role-based access control to simulate real-world restaurant responsibilities.
-
-### Technology Stack
-
-- **Backend:** Python (Django Framework)
-- **Frontend:** HTML, CSS, JavaScript
-- **Database:** SQLite (default, configurable)
-
----
+The Restaurant Management System is a sophisticated web application designed to streamline operations within a restaurant, developed specifically for **Rombo Green View Hotel (RGVH)**. This application effectively manages core functionalities such as order placement, waiter payments, and expense tracking, making it an essential tool for restaurant management. Built primarily on the **Django framework** using **Python**, the system also incorporates modern web technologies like **HTML**, **CSS**, and **JavaScript** for an engaging user interface.
 
 ## Features
 
-### Order Management
-- Create and manage customer orders
-- Update order status
-- Assign and manage tables
-- Track completed and pending orders
+### Key Features Include:
 
-### Payment Processing
-- Process customer payments
-- Generate receipts
-- Track daily transactions
-- Monitor operational expenses
+- **Order Management**:
+  - Simplifies the process for customers to place orders directly through an intuitive user interface.
+  - Manages order status updates and modifications efficiently.
 
-### Role-Based Access Control
-- Restricts access based on user roles
-- Protects financial and administrative data
-- Reflects real restaurant operational structure
+- **Payment Processing**:
+  - Facilitates transparent management of waiter payments and integrates various payment methods.
+  - Tracks expenses related to food supplies, staffing, and operational costs, ensuring financial clarity.
 
----
+- **User Roles and Permissions**:
+  - **Waiters** can manage customer orders and update the status of their tables.
+  - **Cashiers** handle payment processing and generate financial reports.
+  - **CEOs** and management staff have comprehensive oversight and access to all functionalities, including analytics and performance metrics.
 
-## Technical Specifications
+### Technical Specifications
 
-### Backend
-- Python 3.6 or higher
-- Django Framework
-
-### Frontend
-- HTML
-- CSS
-- JavaScript
-
-### Database
-- SQLite (default configuration)
-- Can be migrated to PostgreSQL for production environments
-
----
+- **Backend**:
+  - Developed in **Python** using the **Django** framework, ensuring robust performance and security.
+- **Frontend**:
+  - The user interface is built using **HTML**, **CSS**, and **JavaScript**, providing a responsive and user-friendly experience across devices.
+- **Database**:
+  - Uses **SQLite** for lightweight and efficient data storage, with the possibility of migrating to more robust databases like PostgreSQL for larger operations in the future.
 
 ## Getting Started
 
-Follow the steps below to set up the project locally for development or testing.
+The following instructions outline how to set up the project on your local machine for development or testing purposes.
 
 ### Prerequisites
 
-Ensure you have installed:
+- Ensure you have **Python 3.6 or higher** installed on your machine.
+- Familiarity with Git and command-line operations will be beneficial.
 
-- Python 3.6+
-- Git
-- pip (Python package manager)
+### Installation Steps
 
----
+1. **Clone the Repository**:
+   - Open your terminal (PowerShell on Windows, terminal on macOS/Linux) and execute the following command:
+     ```bash
+     git clone https://github.com/nikodemo-bukwimba/Restaurant-management-system.git
+     ```
 
-## Installation
+2. **Navigate to the Cloned Directory**:
+   - Move into the project directory:
+     ```bash
+     cd Restaurant-management-system
+     ```
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/nikodemo-bukwimba/Restaurant-management-system.git
-```
+3. **Open the Project in Your Code Editor** (optional):
+   - For users of Visual Studio Code:
+     ```bash
+     code .
+     ```
 
-### 2. Navigate to the Project Directory
-```bash
-cd Restaurant-management-system
-```
+4. **Create a Virtual Environment**:
+   - It’s best practice to create a virtual environment for Python projects to manage dependencies.
+   - For **Windows (PowerShell)**:
+     ```bash
+     python -m venv venv
+     .\venv\Scripts\Activate
+     ```
+   - For **macOS/Linux**:
+     ```bash
+     python3 -m venv venv
+     source venv/bin/activate
+     ```
 
-### 3. Create a Virtual Environment
+5. **Install Project Dependencies**:
+   - With the virtual environment activated, install the required packages:
+     ```bash
+     pip install -r requirements.txt
+     ```
 
-**Windows (PowerShell):**
-```bash
-python -m venv venv
-.\venv\Scripts\activate
-```
+6. **Run the Application**:
+   - Launch the Django development server:
+     ```bash
+     python manage.py runserver
+     ```
 
-**macOS/Linux:**
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
+7. **Access the Application**:
+   - Open a web browser and navigate to:
+     [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+   - You should see the application's landing page, indicating the server is running correctly.
 
-### 4. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+### User Roles and Login Credentials
 
-### 5. Apply Database Migrations
-```bash
-python manage.py migrate
-```
+Test the application using predefined user accounts that demonstrate different roles within the system:
 
-### 6. Run the Development Server
-```bash
-python manage.py runserver
-```
+- **Waiter**:
+  - Username: `waiter`
+  - Password: `Go12#34567`
 
-### 7. Access the Application
+- **Cashier**:
+  - Username: `cashier`
+  - Password: `Go12#34567`
 
-Open your browser and visit:
-```
-http://127.0.0.1:8000/
-```
+- **CEO**:
+  - Username: `ceo`
+  - Password: `Go12#34567`
 
-If configured correctly, the application homepage will load.
-
----
-
-## User Roles and Capabilities
-
-The system includes predefined user roles to simulate real restaurant operations. Each role has clearly defined permissions aligned with operational responsibilities.
-
-### Role Overview
-
-| Role | Description | Key Capabilities |
-|------|-------------|------------------|
-| Waiter | Front-of-house staff responsible for handling customer orders and table service. | Create and manage customer orders, Update order status, View assigned tables |
-| Cashier | Responsible for financial transactions and payment processing. | Process payments, Generate receipts, View financial summaries |
-| CEO | Administrative and executive-level user with full system access. | Full system access, View analytics and reports, Manage users and permissions, Monitor expenses |
-
-### Test User Accounts
-
-Use the following credentials to test role-based functionality:
-
-**Waiter**
-- Username: `waiter`
-- Password: `Go12#34567`
-
-**Cashier**
-- Username: `cashier`
-- Password: `Go12#34567`
-
-**CEO**
-- Username: `ceo`
-- Password: `Go12#34567`
-
-### Purpose of Role Separation
-
-Role-based access control ensures:
-
-- Staff members access only features relevant to their responsibilities.
-- Sensitive financial and administrative information is restricted.
-- The system reflects real-world restaurant operational workflows.
-- Contributors clearly understand the purpose of each test account.
-
----
+Each role has distinct permissions tailored to their responsibilities, allowing users to navigate and execute tasks relevant to their position within the system.
 
 ## Contribution Guidelines
 
-We welcome contributions to improve this project.
+We actively welcome contributions to enhance the functionality and performance of this project! Here’s how you can contribute:
 
-### Contribution Workflow
+1. **Fork the Repository**:
+   - Use the "Fork" button at the top right of the repository page to create your own copy.
 
-1. Fork the repository
-2. Create a new branch:
-```bash
-   git switch -c feature-name
-```
-3. Make your changes
-4. Commit your work:
-```bash
-   git commit -m "Describe your changes"
-```
-5. Push your branch:
-```bash
-   git push origin feature-name
-```
-6. Open a Pull Request with a clear explanation of your changes
+2. **Create a Feature Branch**:
+   - In your local copy, create a new branch for your feature or fix:
+     ```bash
+     git switch -c feature-name
+     ```
 
----
+3. **Make Your Changes**:
+   - Implement your changes and improve the code base as needed.
+
+4. **Commit Your Changes**:
+   - Commit your work with a clear and descriptive message:
+     ```bash
+     git commit -m "Add new feature or fix issue"
+     ```
+
+5. **Push to Your Fork**:
+   - Push your changes back to your fork:
+     ```bash
+     git push origin feature-name
+     ```
+
+6. **Open a Pull Request**:
+   - Navigate to the original repository and create a new Pull Request. Clearly explain your changes for review.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
-
----
+This project is licensed under the MIT License. For more details, please refer to the [LICENSE](LICENSE) file in the repository.
 
 ## Acknowledgments
 
-Special thanks to the team at Rombo Green View Hotel for their collaboration and support during development.
+Special thanks to the contributors and the team at Rombo Green View Hotel for their support and collaboration in developing this project.
 
-Feel free to explore the application and contribute to improving the system.
+---
+
+Feel free to explore the application and contribute to making it better! Happy contributing.
